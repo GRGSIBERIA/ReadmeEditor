@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadmeEditor", "ReadmeEditor\ReadmeEditor.csproj", "{F0CC9FA5-4342-4D99-B319-A33DB31D2914}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTMLTest", "HTMLTest\HTMLTest.csproj", "{09036336-D1D3-456D-AB9E-2597A7B46215}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,16 @@ Global
 		{F0CC9FA5-4342-4D99-B319-A33DB31D2914}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F0CC9FA5-4342-4D99-B319-A33DB31D2914}.Release|x86.ActiveCfg = Release|x86
 		{F0CC9FA5-4342-4D99-B319-A33DB31D2914}.Release|x86.Build.0 = Release|x86
+		{09036336-D1D3-456D-AB9E-2597A7B46215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09036336-D1D3-456D-AB9E-2597A7B46215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09036336-D1D3-456D-AB9E-2597A7B46215}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{09036336-D1D3-456D-AB9E-2597A7B46215}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{09036336-D1D3-456D-AB9E-2597A7B46215}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{09036336-D1D3-456D-AB9E-2597A7B46215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09036336-D1D3-456D-AB9E-2597A7B46215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09036336-D1D3-456D-AB9E-2597A7B46215}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{09036336-D1D3-456D-AB9E-2597A7B46215}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{09036336-D1D3-456D-AB9E-2597A7B46215}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

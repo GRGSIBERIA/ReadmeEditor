@@ -61,13 +61,51 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///   &lt;html&gt;
-        ///
-        ///&lt;/html&gt; に類似しているローカライズされた文字列を検索します。
+        ///               &lt;div id=&quot;$ClassIdentifier$&quot;&gt;
+        ///                $Caption$
+        ///            &lt;/div&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string TemplateHTML {
+        internal static string Caption {
             get {
-                return ResourceManager.GetString("TemplateHTML", resourceCulture);
+                return ResourceManager.GetString("Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   &lt;div class=&quot;$ClassIdentifier$-item&quot;&gt;
+        ///    &lt;div class=&quot;$ClassIdentifier$-title&quot;&gt;$Title$&lt;/div&gt;
+        ///    &lt;div class=&quot;$ClassIdentifier$-link&quot;&gt;$Link$&lt;/div&gt;
+        ///    &lt;div class=&quot;$ClassIdentifier$-comment&quot;&gt;$Comment$&lt;/div&gt;
+        ///&lt;/div&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DerivateItem {
+            get {
+                return ResourceManager.GetString("DerivateItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///           &lt;div id=&quot;$ClassIdentifier$&quot;&gt;
+        ///            &lt;div id=&quot;title&quot;&gt;$Title$&lt;/div&gt;
+        ///        &lt;/div&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Header {
+            get {
+                return ResourceManager.GetString("Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   &lt;div class=&quot;$ClassIdentifier$-item&quot;&gt;
+        ///    &lt;div class=&quot;$ClassIdentifier$-title&quot;&gt;$Title$&lt;/div&gt;
+        ///    &lt;div class=&quot;$ClassIdentifier$-caption&quot;&gt;
+        ///        $Caption$
+        ///    &lt;/div&gt;
+        ///&lt;/div&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string StandardItem {
+            get {
+                return ResourceManager.GetString("StandardItem", resourceCulture);
             }
         }
     }

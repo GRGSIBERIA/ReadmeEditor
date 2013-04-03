@@ -1,0 +1,6 @@
+<div class="$ClassIdentifier$-item">
+    <div class="$ClassIdentifier$-title">$Title$</div>
+    <div class="$ClassIdentifier$-caption">
+        $Caption$
+    </div>
+</div>

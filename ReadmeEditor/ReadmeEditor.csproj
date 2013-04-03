@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Export\HTML.cs" />
+    <Compile Include="Export\HTML\TemplateEngine.cs" />
+    <Compile Include="Export\HTML\TemplatePackage.cs" />
+    <Compile Include="Export\HTML\Templates.cs" />
     <Compile Include="Method\CheckedListMethod.cs" />
     <Compile Include="Method\ContextMenuMethod.cs" />
     <Compile Include="Cryptograph.cs" />
@@ -101,7 +103,11 @@
     <Content Include="license.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Resources\TemplateHTML.html" />
+    <None Include="Resources\Caption.txt" />
+    <None Include="Resources\DerivateItem.txt" />
+    <None Include="Resources\StandardItem.txt" />
+    <None Include="Resources\SectionItem.txt" />
+    <None Include="Resources\Header.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
