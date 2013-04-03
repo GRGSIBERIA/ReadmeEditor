@@ -1,159 +1,138 @@
 <html>
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta charset="utf-8" />
         <meta name="Author" content="$Author$" />
+        <meta name="keywords" content="$Tags$" />
         <meta http-equiv="Generator" content="ReadmeEditor V$GenVersion$" />
-        <link rel="Stylesheet" href="./style.css" type="text/css" />
+        <link rel="Stylesheet" href="./style.css" />
         <title>$Title$</title>
     </head>
     <body>
-        <div id="header">
-            <div id="title">$Title$</div>
-        </div>
+        <header>
+            <h1>$Title$</h1>
+        </header>
         <div id="main">
             <!-- もくじ -->
-            <div id="index">
-                <ul class="index-ul">
+            <nav>
+                <h2>$IndexTitle$</h2>
+                <ol>
                     <li><a href="#caption">$CaptionTitle$</a></li>
                     <li><a href="#howto">$HowtoTitle$</a></li>
                     <li><a href="#derivate">$DerivateTitle$</a></li>
                     <li><a href="#remark">$RemarkTitle$</a></li>
                     <li><a href="#license">$LicenseTitle$</a></li>
                     <li><a href="#update">$UpdateTitle$</a></li>
-                </ul>
-            </div>
+                </ol>
+            </nav>
 
             <!-- 説明 -->
-            <div id="caption">
-                $Caption$
-            </div>
+            <article id="caption">
+                <section>
+                    <h2>$ChapterTitle$</h2>
+                    <div>
+                        $Content$
+                    </div>
+                </section>
+            </article>
 
             <!-- 使い方 -->
-            <div id="howto">
-                <a name="#howto"></a>
-                <div class="howto-title">$HowtoTitle$</div>
+            <article id="howto">
+                <h2>$ChapterTitle$</h2>
+
                 <div class="section">
-                    <div class="section-item">
-                        <div class="section-title">$SectionTitle$</div>
-                        <div class="section-contents">
-                            $SectionContents$
+                    <section>
+                        <h3>$Title$</h3>
+                        <div class="section-content">
+                            $Content$
                         </div>
-                    </div>
-
-                    <hr class="section-separate" />
-
-                    <div class="section-item">
-                        <div class="section-title">$SectionTitle$</div>
-                        <div class="section-contents">
-                            $SectionContents$
-                        </div>
-                    </div>
+                    </section>
 
                     <div class="subsection">
-                        <div class="subsection-item">
-                            <div class="subsection-title">$SubSectionTitle$</div>
-                            <div class="subsection-contents">
-                                $SubSectionContent$
+                        <section>
+                            <h4>$Title$</h4>
+                            <div class="subsection-content">
+                                $Content$
                             </div>
-                        </div>
-
-                        <hr class="subsection-separate" />
-
-                        <div class="subsection-item">
-                            <div class="subsection-title">$SubSectionTitle$</div>
-                            <div class="subsection-contents">
-                                $SubSectionContent$
-                            </div>
-                        </div>
+                        </section>
 
                         <div class="subsubsection">
-                            <div class="subsubsection-item">
-                                <div class="subsubsection-title">$SubSubSectionTitle$</div>
-                                <div class="subsubsection-contents">
-                                    $SubSubSectionContent$
+                            <section>
+                                <h5>$Title$</h5>
+                                <div class="subsubsection-content">
+                                    $Content$
                                 </div>
-                            </div>
-                            
-                            <hr class="subsubsection-separate" />
-                            
-                            <div class="subsubsection-item">
-                                <div class="subsubsection-title">$SubSubSectionTitle$</div>
-                                <div class="subsubsection-contents">
-                                    $SubSubSectionContent$
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="subsection-separate" />
-
-                        <div class="subsection-item">
-                            <div class="subsection-title">$SubSectionTitle$</div>
-                            <div class="subsection-contents">
-                                $SubSectionContent$
-                            </div>
+                            </section>
                         </div>
                     </div>
-                    
-                    <hr class="section-separate" />
-
-                    <div class="section-item">
-                        <div class="section-title">$SectionTitle$</div>
-                        <div class="section-contents">
-                            $SectionContents$
-                        </div>
-                    </div>
-                    <!-- separateは最後だけ挿入しない -->
                 </div>
-            </div>
+            </article>
 
             <!-- 借りた物 -->
             <div id="derivate">
-                <a name="#derivate"></a>
-                <div class="item">
-                    <div class="derivate-title">$DerivateTitle$</div>
-                    <div class="derivate-link">$DerivateLink$</div>
-                    <div class="derivate-comment">$DerivateComment$</div>
-                </div>
+                <h2 class="chapter-title">$ChapterTitle$</h2>
 
-                <hr class="derivate-separate" />
-
-                <div class="item">
-                    <div class="derivate-title">$DerivateTitle$</div>
-                    <div class="derivate-link">$DerivateLink$</div>
-                    <div class="derivate-comment">$DerivateComment$</div>
-                </div>
+                <section>
+                    <h2>$Title$</h2>
+                    <div class="link">$Link$</div>
+                    <div class="comment">
+                        $Comment$
+                    </div>
+                </section>
             </div>
 
             <!-- 備考 -->
             <div id="remark">
-                <a name="#remark"></a>
-                <div class="remark-item">
-                    <div class="remark-title">$RemarkTitle$</div>
-                    <div class="remark-caption">$RemarkCaption$</div>
-                </div>
-                <hr class="remark-separate" />
-                <div class="remark-item">
-                    <div class="remark-title">$RemarkTitle$</div>
-                    <div class="remark-caption">$RemarkCaption$</div>
-                </div>
+                <h2>$RemarkChapterTitle$</h2>
+
+                <section>
+                    <h2>$RemarkTitle$</h2>
+                    <div>$RemarkCaption$</div>
+                </section>
             </div>
 
             <!-- ライセンス -->
-            <div id="license">
-                <a name="#license"></a>
-                <div class="license-item">
-                    <div class="license-title">$LicenseTitle$</div>
-                    <div class="license-abstract">$LicenseAbstract$</div>
-                </div>
-                <hr class="license-separate" />
-            </div>
+            <article id="license">
+                <h2>$ChapterTitle$</h2>
+
+                <section>
+                    <h3>$Title$</h3>
+                    <div>
+                        $Abstract$
+                    </div>
+                </section>
+            </article>
 
             <!-- 更新情報 -->
-            <div id="update">
-                <a name="#update"></a>
-                <div class="update-item">
-                    <!-- 使い方とほぼ同じ -->
+            <article id="update">
+                <h2>$ChapterTitle$</h2>
+                
+                <div class="section">
+                    <section>
+                        <h3>$Title$</h3>
+                        <div class="section-content">
+                            $Content$
+                        </div>
+                    </section>
+
+                    <div class="subsection">
+                        <section>
+                            <h4>$Title$</h4>
+                            <div class="subsection-content">
+                                $Content$
+                            </div>
+                        </section>
+
+                        <div class="subsubsection">
+                            <section>
+                                <h5>$Title$</h5>
+                                <div class="subsubsection-content">
+                                    $Content$
+                                </div>
+                            </section>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </article>
         </div>
         <div id="footer">
             <div id="copyright">

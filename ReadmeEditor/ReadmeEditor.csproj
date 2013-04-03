@@ -103,6 +103,7 @@
     <Content Include="license.xml">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Resources\MetaHead.txt" />
     <None Include="Resources\Caption.txt" />
     <None Include="Resources\DerivateItem.txt" />
     <None Include="Resources\StandardItem.txt" />

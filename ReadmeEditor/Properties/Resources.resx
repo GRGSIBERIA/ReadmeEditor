@@ -127,6 +127,9 @@
   <data name="Header" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Header.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>
   </data>
+  <data name="MetaHead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MetaHead.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>
+  </data>
   <data name="StandardItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StandardItem.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>
   </data>

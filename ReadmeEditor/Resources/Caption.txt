@@ -1,3 +1,8 @@
-            <div id="$ClassIdentifier$">
-                $Caption$
-            </div>
+            <article id="$ClassIdentifier$">
+                <section class="$ClassIdentifier$">
+                    <h2 class="$ClassIdentifier$">$ChapterTitle$</h2>
+                    <div class="$ClassIdentifier$">
+                        $Content$
+                    </div>
+                </section>
+            </article>

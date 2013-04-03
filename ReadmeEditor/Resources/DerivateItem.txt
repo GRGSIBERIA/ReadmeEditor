@@ -1,5 +1,7 @@
-<div class="$ClassIdentifier$-item">
-    <div class="$ClassIdentifier$-title">$Title$</div>
-    <div class="$ClassIdentifier$-link">$Link$</div>
-    <div class="$ClassIdentifier$-comment">$Comment$</div>
-</div>
+                <section class="$ClassIdentifier$">
+                    <h2>$Title$</h2>
+                    <div class="link">$Link$</div>
+                    <div class="comment">
+                        $Comment$
+                    </div>
+                </section>

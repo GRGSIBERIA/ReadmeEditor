@@ -96,6 +96,19 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
+        ///           &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+        ///        &lt;meta name=&quot;Author&quot; content=&quot;$Author$&quot; /&gt;
+        ///        &lt;meta http-equiv=&quot;Generator&quot; content=&quot;ReadmeEditor V$GenVersion$&quot; /&gt;
+        ///        &lt;link rel=&quot;Stylesheet&quot; href=&quot;./style.css&quot; type=&quot;text/css&quot; /&gt;
+        ///        &lt;title&gt;$Title$&lt;/title&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string MetaHead {
+            get {
+                return ResourceManager.GetString("MetaHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   &lt;div class=&quot;$ClassIdentifier$-item&quot;&gt;
         ///    &lt;div class=&quot;$ClassIdentifier$-title&quot;&gt;$Title$&lt;/div&gt;
         ///    &lt;div class=&quot;$ClassIdentifier$-caption&quot;&gt;

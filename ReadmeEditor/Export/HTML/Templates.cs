@@ -59,11 +59,19 @@ namespace ReadmeEditor.Export.HTML
 		}
 	}
 
-	public class Caption : TemplateItem
+	public class Caption : TemplateBase
 	{
 		public static string TestRender(ItemPackage package)
 		{
 			return Render(package, Properties.Resources.Caption);
+		}
+	}
+
+	public class MetaHead : TemplateBase
+	{
+		public static string TestRender(ItemPackage package)
+		{
+			return Render(package, Properties.Resources.MetaHead);
 		}
 	}
 }

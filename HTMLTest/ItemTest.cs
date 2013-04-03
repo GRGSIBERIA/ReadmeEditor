@@ -88,5 +88,14 @@ namespace HTMLTest
 			Console.WriteLine(Header.TestRender(pack));
 		}
 
+		[TestMethod]
+		public void InputMeta1()
+		{
+			ItemPackage pack = new ItemPackage("");
+			pack["GenVersion"] = "1.0";
+			pack["Author"] = "Eiichi Takebuchi(GRGSIBERIA)";
+			pack["Title"] = "HogehogeTitle";
+			Console.WriteLine(MetaHead.TestRender(pack));
+		}
 	}
 }

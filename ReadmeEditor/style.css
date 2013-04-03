@@ -1,0 +1,223 @@
+/* もくじ関連 */
+nav
+{
+
+}
+
+nav > h2
+{
+
+}
+
+nav ol
+{
+}
+
+nav * li
+{
+    
+}
+
+/* 説明関連 */
+
+article#caption
+{
+
+}
+
+article#caption > h2
+{
+
+}
+
+article#caption section
+{
+
+}
+
+article#caption * div
+{
+
+}
+
+/* 使い方関連 */
+
+article#howto
+{
+
+}
+
+article#howto > h2
+{
+
+}
+
+article#howto * hr
+{
+
+}
+
+/* 借りた物関連 */
+
+article#derivate
+{
+
+}
+
+article#derivate > h2
+{
+
+}
+
+article#derivate section
+{
+
+}
+
+article#derivate * h3
+{
+
+}
+
+article#derivate * div.link
+{
+
+}
+
+article#derivate * div.comment
+{
+
+}
+
+article#derivate * hr
+{
+
+}
+
+/* 備考関連 */
+
+article#remark
+{
+
+}
+
+article#remark > h2
+{
+
+}
+
+article#remark section
+{
+
+}
+
+article#remark * h3
+{
+
+}
+
+article#remark * div
+{
+
+}
+
+article#remark * hr
+{
+
+}
+
+/* ライセンス関連 */
+
+article#license
+{
+
+}
+
+article#license > h2
+{
+
+}
+
+article#license section
+{
+
+}
+
+article#license * h3
+{
+
+}
+
+article#license * div
+{
+
+}
+
+article#license * hr
+{
+
+}
+
+/* 更新情報関連 */
+
+article#update
+{
+
+}
+
+article#update > h2
+{
+
+}
+
+article#update * hr
+{
+
+}
+
+/* 章立てごとに分割可能な部分に */
+
+div.section > section
+{
+
+}
+
+div.section * h3
+{
+
+}
+
+div.section-content
+{
+    
+}
+
+div.subsection > section
+{
+
+}
+
+div.subsection * h4
+{
+    
+}
+
+div.subsection-content
+{
+    
+}
+
+div.subsubsection > section
+{
+    
+}
+
+div.subsubsection * h5
+{
+
+}
+
+div.subsubsection-content
+{
+    
+}

@@ -1,6 +1,6 @@
-<div class="$ClassIdentifier$-item">
-    <div class="$ClassIdentifier$-title">$Title$</div>
-    <div class="$ClassIdentifier$-caption">
+<section class="$ClassIdentifier$">
+    <div class="title">$Title$</div>
+    <div class="caption">
         $Caption$
     </div>
-</div>
+</section>

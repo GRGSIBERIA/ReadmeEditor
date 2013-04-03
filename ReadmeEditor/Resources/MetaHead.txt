@@ -1,0 +1,6 @@
+        <meta charset="UTF-8" />
+        <meta name="author" content="$Author$" />
+        <meta http-equiv="generator" content="ReadmeEditor V$GenVersion$" />
+        <meta name="keywords" content="$Tags$" />
+        <link rel="Stylesheet" href="./style.css" />
+        <title>$Title$</title>
