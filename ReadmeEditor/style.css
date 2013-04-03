@@ -1,5 +1,42 @@
+/* ヘッダー関連 */
+
+header
+{
+
+}
+
+header > h1
+{
+
+}
+
+/* フッター関連 */
+
+footer
+{
+
+}
+
+footer div#copyright
+{
+
+}
+
+footer div#generator
+{
+
+}
+
+/* 中心部分関連 */
+
+div#main
+{
+
+}
+
 /* もくじ関連 */
-nav
+
+div#main nav
 {
 
 }
