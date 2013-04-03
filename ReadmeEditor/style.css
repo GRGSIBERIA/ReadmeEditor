@@ -229,6 +229,11 @@ div.section-content
     
 }
 
+div.section > hr
+{
+    
+}
+
 div.subsection > section
 {
 
@@ -244,6 +249,11 @@ div.subsection-content
     
 }
 
+div.subsection > hr
+{
+
+}
+
 div.subsubsection > section
 {
     
@@ -257,4 +267,9 @@ div.subsubsection * h5
 div.subsubsection-content
 {
     
+}
+
+div.subsubsection-content > hr
+{
+
 }

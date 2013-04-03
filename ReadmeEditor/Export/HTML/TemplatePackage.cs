@@ -5,22 +5,33 @@ using System.Text;
 
 namespace ReadmeEditor.Export.HTML
 {
-	public class ItemPackage
+	public abstract class PackageBase
 	{
-		private string classIdentifier;
-		private Dictionary<string, bool> enableContent = new Dictionary<string,bool>();
-		private Dictionary<string, string> variables = new Dictionary<string,string>();
-
-		public ItemPackage(string classIdentifier)
-		{
-			this.classIdentifier = classIdentifier;
-			variables["ClassIdentifier"] = classIdentifier; 
-		}
+		protected Dictionary<string, string> variables = new Dictionary<string,string>();
 
 		public string this[string name]
 		{
 			set { variables[name] = value; }
 			get { return variables[name]; }
+		}
+	}
+
+	public class ItemPackage : PackageBase
+	{
+		public ItemPackage(string classIdentifier, string itemTemplate)
+		{
+			variables["ClassIdentifier"] = classIdentifier;
+			variables["ItemTemplate"] = itemTemplate;
+		}
+	}
+
+	public class PartPackage : PackageBase
+	{
+		private string classIdentifier;
+
+		public PartPackage(string classIdentifier)
+		{
+			this.classIdentifier = classIdentifier;
 		}
 	}
 }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using ReadmeEditor.Export.HTML;
+using ReadmeEditor.Export.HTML.Template;
 
 namespace HTMLTest
 {
@@ -72,7 +74,8 @@ namespace HTMLTest
 		public void InputCaption1()
 		{
 			ItemPackage pack = new ItemPackage("caption");
-			pack["Caption"] = "ほげほげだよぉ";
+			pack["ChapterTitle"] = "説明だよ！";
+			pack["Content"] = "ほげほげだよぉ";
 			Console.WriteLine(Caption.TestRender(pack));
 		}
 	}
@@ -95,6 +98,7 @@ namespace HTMLTest
 			pack["GenVersion"] = "1.0";
 			pack["Author"] = "Eiichi Takebuchi(GRGSIBERIA)";
 			pack["Title"] = "HogehogeTitle";
+			pack["Tags"] = "タグ,A,B";
 			Console.WriteLine(MetaHead.TestRender(pack));
 		}
 	}

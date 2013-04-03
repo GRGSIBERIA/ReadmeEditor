@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="Export\HTML\TemplateEngine.cs" />
     <Compile Include="Export\HTML\TemplatePackage.cs" />
-    <Compile Include="Export\HTML\Templates.cs" />
+    <Compile Include="Export\HTML\Template\TemplateBase.cs" />
     <Compile Include="Method\CheckedListMethod.cs" />
     <Compile Include="Method\ContextMenuMethod.cs" />
     <Compile Include="Cryptograph.cs" />
@@ -103,11 +103,17 @@
     <Content Include="license.xml">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Resources\SectionItem.txt" />
+    <None Include="Resources\Footer.txt" />
+    <None Include="Resources\Main.txt" />
+    <None Include="Resources\NavigationPart.txt" />
+    <None Include="Resources\StandardPart.txt" />
+    <Content Include="style.css" />
+    <Content Include="template.html" />
     <None Include="Resources\MetaHead.txt" />
     <None Include="Resources\Caption.txt" />
     <None Include="Resources\DerivateItem.txt" />
     <None Include="Resources\StandardItem.txt" />
-    <None Include="Resources\SectionItem.txt" />
     <None Include="Resources\Header.txt" />
   </ItemGroup>
   <ItemGroup />

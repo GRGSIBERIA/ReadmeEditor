@@ -1,0 +1,12 @@
+            <!-- ‚à‚­‚¶ -->
+            <nav>
+                <h2>$IndexTitle$</h2>
+                <ol>
+                    <li><a href="#caption">$CaptionTitle$</a></li>
+                    <li><a href="#howto">$HowtoTitle$</a></li>
+                    <li><a href="#derivate">$DerivateTitle$</a></li>
+                    <li><a href="#remark">$RemarkTitle$</a></li>
+                    <li><a href="#license">$LicenseTitle$</a></li>
+                    <li><a href="#update">$UpdateTitle$</a></li>
+                </ol>
+            </nav>

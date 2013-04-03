@@ -1,0 +1,5 @@
+            <article id="$ClassIdentifier$">
+                <h2>$ChapterTitle$</h2>
+
+                $Contents$
+            </article>
