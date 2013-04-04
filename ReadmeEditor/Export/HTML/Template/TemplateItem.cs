@@ -10,10 +10,7 @@ namespace ReadmeEditor.Export.HTML.Template
 	/// </summary>
 	public class TemplateItem : TemplateBase
 	{
-		public static string TestRender(ItemPackage package)
-		{
-			return "";
-		}
+
 	}
 
 	public class DerivateItem : TemplateItem
@@ -44,4 +41,6 @@ namespace ReadmeEditor.Export.HTML.Template
 	{
 		
 	}
+
+	
 }

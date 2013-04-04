@@ -1,6 +1,6 @@
-                    <section>
-                        <h3>$Title$</h3>
+<section>
+                        <h$Depth$>$Title$</h$Depth$>
                         <div class="$ClassIdentifier$-content">
-                            $Content$
+                            $Caption$
                         </div>
                     </section>

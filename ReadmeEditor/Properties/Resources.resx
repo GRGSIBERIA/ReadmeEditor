@@ -142,8 +142,14 @@
   <data name="SectionItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SectionItem.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>
   </data>
+  <data name="SectionPart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SectionPart.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>
+  </data>
   <data name="Separate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Separate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>
+  </data>
+  <data name="SingleContents" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SingleContents.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>
   </data>
   <data name="StandardItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StandardItem.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;shift_jis</value>

@@ -1,4 +1,4 @@
-        <footer>
+<footer>
             <div id="copyright">
                 Copyright $Year$ $Author$ All Rights Reserved.<br />
             </div>

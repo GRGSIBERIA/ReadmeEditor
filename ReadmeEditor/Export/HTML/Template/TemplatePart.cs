@@ -11,7 +11,56 @@ namespace ReadmeEditor.Export.HTML.Template
 	/// </summary>
 	public abstract class TemplatePart : TemplateBase
 	{
+		public static string RenderPart(PartPackage partPack, PackageBase[] itemPacks)
+		{
+			partPack["Contents"] = RenderingItems(partPack, itemPacks);
+			return TemplateBase.Render(partPack, partPack["PartTemplate"]);
+		}
 
+		private static string RenderingItems(PartPackage partPack, PackageBase[] itemPacks)
+		{
+			string result = "";
+
+			if (itemPacks.Length > 0)
+			{
+				result += RenderItemAsIfRenderSection(itemPacks[0], partPack);
+				for (int i = 1; i < itemPacks.Length; i++)
+				{
+					result += "\n" + Properties.Resources.Separate;
+					result += RenderItemAsIfRenderSection(itemPacks[i], partPack);
+				}
+			}
+
+			return result;
+		}
+
+		private static string RenderItemAsIfRenderSection(PackageBase itemPack, PartPackage partPack)
+		{
+			string result = RenderItemAsIfSectionPack(itemPack, partPack);
+
+			SectionPackage section_pack = itemPack as SectionPackage;
+			if (section_pack != null)
+			{
+				var childs = section_pack.Childs.ToArray();
+				if (childs.Length > 0)
+				{
+					int depth = int.Parse(partPack["Depth"]) + 1;
+					result += SectionPart.RenderSection(childs, depth);
+				}
+			}
+			return result;
+		}
+
+		private static string RenderItemAsIfSectionPack(PackageBase itemPack, PartPackage partPack)
+		{
+			SectionPackage section = itemPack as SectionPackage;
+			if (section != null)
+			{
+				itemPack["Depth"] = (int.Parse(partPack["Depth"]) + 3).ToString();
+			}
+
+			return TemplateBase.Render(itemPack, partPack["ItemTemplate"]) + "\n";
+		}
 	}
 
 	/// <summary>
@@ -19,50 +68,80 @@ namespace ReadmeEditor.Export.HTML.Template
 	/// </summary>
 	public class StandardPart : TemplatePart
 	{
-		public static string RenderTest<T>(PartPackage partPack, ItemPackage[] itemPacks)
-			where T : TemplateItem
+		public static string RenderTest(PartPackage partPack, PackageBase[] itemPacks, string renderType)
 		{
-			string result = "";
-
-			switch (typeof(T).Name)
+			partPack["PartTemplate"] = Properties.Resources.StandardPart;
+			switch (renderType)
 			{
-				case "DerivateItem":
-					result = RenderDerivate(partPack["ItemTemplate"], itemPacks);
+				case "StandardItem":
+					partPack["ItemTemplate"] = Properties.Resources.StandardItem;
 					break;
 
-				case "StandardItem":
+				case "DerivateItem":
+					partPack["ItemTemplate"] = Properties.Resources.DerivateItem;
 					break;
 
 				case "Caption":
+					partPack["ItemTemplate"] = Properties.Resources.Caption;
 					break;
 			}
-
-			return result;
+			return RenderPart(partPack, itemPacks);
 		}
 
-		private static string RenderDerivate(string resource, ItemPackage[] itemPacks)
+		public static string RenderSection(PartPackage partPack, SectionPackage[] sectionPacks)
 		{
-			string result = "";
-			if (itemPacks.Length > 0)
+			ItemPackage inner_pack = MakeInner(partPack, sectionPacks);
+
+			partPack["ItemTemplate"] = Properties.Resources.SingleContents;
+			partPack["PartTemplate"] = Properties.Resources.StandardPart;
+			return RenderPart(partPack, new ItemPackage[] { inner_pack });
+		}
+
+		private static ItemPackage MakeInner(PartPackage partPack, SectionPackage[] sectionPacks)
+		{
+			int depth = 0;
+			if (partPack.ContainsKey("Depth"))
 			{
-				result += DerivateItem.Render(itemPacks[0], resource);
-				for (int i = 1; i < itemPacks.Length; i++)
-				{
-					result += "\n" + Properties.Resources.Separate + "\n";
-					result += DerivateItem.Render(itemPacks[i], resource);
-				}
+				depth = int.Parse(partPack["Depth"]) + 1;
 			}
-			return result;
+
+			ItemPackage inner_pack = new ItemPackage(partPack["ClassIdentifier"]);
+			inner_pack["Contents"] = SectionPart.RenderSection(sectionPacks, depth);
+			return inner_pack;
+		}
+	}
+
+	public class SectionPart : TemplatePart
+	{
+		public static string RenderSection(SectionPackage[] items, int depth)
+		{
+			string sectionName = DepthToSectionName(depth);
+
+			PartPackage pack = new PartPackage(sectionName);
+			pack["PartTemplate"] = Properties.Resources.SectionPart;
+			pack["ItemTemplate"] = Properties.Resources.SectionItem;
+			pack["Depth"] = depth.ToString();
+			return StandardPart.RenderPart(pack, items);
 		}
 
-		private static string RenderStandard()
+		protected static string DepthToSectionName(int depth)
 		{
-			return "";
-		}
+			string sectionName = "";
+			switch (depth)
+			{
+				case 0:
+					sectionName = "section";
+					break;
 
-		private static string RenderCaption()
-		{
-			return "";
+				case 1:
+					sectionName = "subsection";
+					break;
+
+				case 2:
+					sectionName = "subsubsection";
+					break;
+			}
+			return sectionName;
 		}
 	}
 

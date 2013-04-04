@@ -61,10 +61,9 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///                   &lt;section&gt;
-        ///                    &lt;h2&gt;$ChapterTitle$&lt;/h2&gt;
+        ///   &lt;section&gt;
         ///                    &lt;div&gt;
-        ///                        $Content$
+        ///                        $Contents$
         ///                    &lt;/div&gt;
         ///                &lt;/section&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -75,7 +74,7 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///                   &lt;section class=&quot;$ClassIdentifier$&quot;&gt;
+        ///   &lt;section class=&quot;$ClassIdentifier$&quot;&gt;
         ///                    &lt;h2&gt;$Title$&lt;/h2&gt;
         ///                    &lt;div class=&quot;link&quot;&gt;$Link$&lt;/div&gt;
         ///                    &lt;div class=&quot;comment&quot;&gt;
@@ -90,7 +89,7 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///           &lt;footer&gt;
+        ///   &lt;footer&gt;
         ///            &lt;div id=&quot;copyright&quot;&gt;
         ///                Copyright $Year$ $Author$ All Rights Reserved.&lt;br /&gt;
         ///            &lt;/div&gt;
@@ -106,7 +105,7 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///           &lt;header&gt;
+        ///   &lt;header&gt;
         ///            &lt;h1&gt;$Title$&lt;/h1&gt;
         ///        &lt;/header&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -117,7 +116,7 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///           &lt;div id=&quot;main&quot;&gt;
+        ///   &lt;div id=&quot;main&quot;&gt;
         ///            $MainContent$
         ///        &lt;/div&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -161,10 +160,10 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///                       &lt;section&gt;
+        ///   &lt;section&gt;
         ///                        &lt;h3&gt;$Title$&lt;/h3&gt;
         ///                        &lt;div class=&quot;$ClassIdentifier$-content&quot;&gt;
-        ///                            $Content$
+        ///                            $Caption$
         ///                        &lt;/div&gt;
         ///                    &lt;/section&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -175,7 +174,21 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///                   &lt;hr&gt; に類似しているローカライズされた文字列を検索します。
+        ///   &lt;div class=&quot;$ClassIdentifier$&quot;&gt;
+        ///                    $Contents$
+        ///                &lt;/div&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SectionPart {
+            get {
+                return ResourceManager.GetString("SectionPart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    
+        ///                &lt;hr&gt;
+        ///
+        ///                 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Separate {
             get {
@@ -184,7 +197,16 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///                   &lt;section&gt;
+        ///   $Contents$ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SingleContents {
+            get {
+                return ResourceManager.GetString("SingleContents", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   &lt;section&gt;
         ///                    &lt;h3&gt;$Title$&lt;/h3&gt;
         ///                    &lt;div&gt;
         ///                        $Caption$
@@ -198,7 +220,7 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///               &lt;article id=&quot;$ClassIdentifier$&quot;&gt;
+        ///   &lt;article id=&quot;$ClassIdentifier$&quot;&gt;
         ///                &lt;h2&gt;$ChapterTitle$&lt;/h2&gt;
         ///
         ///                $Contents$

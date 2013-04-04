@@ -50,6 +50,9 @@
     <Compile Include="Export\HTML\TemplateEngine.cs" />
     <Compile Include="Export\HTML\TemplatePackage.cs" />
     <Compile Include="Export\HTML\Template\TemplateBase.cs" />
+    <Compile Include="Export\HTML\Template\TemplateComponent.cs" />
+    <Compile Include="Export\HTML\Template\TemplateItem.cs" />
+    <Compile Include="Export\HTML\Template\TemplatePart.cs" />
     <Compile Include="Method\CheckedListMethod.cs" />
     <Compile Include="Method\ContextMenuMethod.cs" />
     <Compile Include="Cryptograph.cs" />
@@ -108,6 +111,9 @@
     <None Include="Resources\Main.txt" />
     <None Include="Resources\NavigationPart.txt" />
     <None Include="Resources\StandardPart.txt" />
+    <None Include="Resources\Separate.txt" />
+    <None Include="Resources\SectionPart.txt" />
+    <None Include="Resources\SingleContents.txt" />
     <Content Include="style.css" />
     <Content Include="template.html" />
     <None Include="Resources\MetaHead.txt" />

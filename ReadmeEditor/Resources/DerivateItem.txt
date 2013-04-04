@@ -1,4 +1,4 @@
-                <section class="$ClassIdentifier$">
+<section class="$ClassIdentifier$">
                     <h2>$Title$</h2>
                     <div class="link">$Link$</div>
                     <div class="comment">

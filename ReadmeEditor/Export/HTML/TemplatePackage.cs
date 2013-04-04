@@ -14,24 +14,41 @@ namespace ReadmeEditor.Export.HTML
 			set { variables[name] = value; }
 			get { return variables[name]; }
 		}
+
+		public bool ContainsKey(string name)
+		{
+			return variables.ContainsKey(name);
+		}
+
+		public PackageBase(string classIdentifier)
+		{
+			variables["ClassIdentifier"] = classIdentifier;
+		}
 	}
 
 	public class ItemPackage : PackageBase
 	{
-		public ItemPackage(string classIdentifier, string itemTemplate)
-		{
-			variables["ClassIdentifier"] = classIdentifier;
-			variables["ItemTemplate"] = itemTemplate;
-		}
+		public ItemPackage(string classIdentifier) : base(classIdentifier) { }
 	}
 
 	public class PartPackage : PackageBase
 	{
-		private string classIdentifier;
-
-		public PartPackage(string classIdentifier)
+		public PartPackage(string classIdentifier, string itemTemplate) : base(classIdentifier)
 		{
-			this.classIdentifier = classIdentifier;
+			variables["ItemTemplate"] = itemTemplate;
+		}
+
+		public PartPackage(string classIdentifier) : base(classIdentifier) { }
+	}
+
+	public class SectionPackage : PackageBase
+	{
+		private List<SectionPackage> childs;
+		public List<SectionPackage> Childs { get { return childs; } }
+
+		public SectionPackage(string classIdentifier, SectionPackage[] childs) : base(classIdentifier) 
+		{
+			this.childs = new List<SectionPackage>(childs);
 		}
 	}
 }

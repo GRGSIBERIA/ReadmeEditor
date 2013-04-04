@@ -1,6 +1,5 @@
-                <section>
-                    <h2>$ChapterTitle$</h2>
+<section>
                     <div>
-                        $Content$
+                        $Contents$
                     </div>
                 </section>

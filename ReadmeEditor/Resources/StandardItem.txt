@@ -1,4 +1,4 @@
-                <section>
+<section>
                     <h3>$Title$</h3>
                     <div>
                         $Caption$

@@ -11,7 +11,7 @@ namespace ReadmeEditor.Export.HTML.Template
 	/// </summary>
 	public abstract class TemplateBase
 	{
-		public static string Render(ItemPackage package, string renderStr)
+		public static string Render(PackageBase package, string renderStr)
 		{
 			string render_str = renderStr;
 			Regex regex = new Regex(@"\$\w+\$");
