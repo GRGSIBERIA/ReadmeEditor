@@ -210,8 +210,14 @@ namespace HTMLTest
 		[TestMethod]
 		public void PartSectionHowto2()
 		{
+			SectionPackage[] babies = new SectionPackage[] {
+				MakeSection("section", "A", "男", new SectionPackage[] {}),
+				MakeSection("section", "B", "山", new SectionPackage[] {}),
+				MakeSection("section", "C", "皮", new SectionPackage[] {})
+			};
+
 			SectionPackage[] childs = new SectionPackage[] {
-				MakeSection("section", "a", "hoge", new SectionPackage[] {}),
+				MakeSection("section", "a", "hoge", babies),
 				MakeSection("section", "b", "puyo", new SectionPackage[] {}),
 				MakeSection("section", "c", "moe", new SectionPackage[] {})
 			};

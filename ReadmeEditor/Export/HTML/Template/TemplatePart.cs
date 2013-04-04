@@ -56,6 +56,7 @@ namespace ReadmeEditor.Export.HTML.Template
 			SectionPackage section = itemPack as SectionPackage;
 			if (section != null)
 			{
+				// sectionのHタグのために設定
 				itemPack["Depth"] = (int.Parse(partPack["Depth"]) + 3).ToString();
 			}
 
