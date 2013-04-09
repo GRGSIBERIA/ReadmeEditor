@@ -1,6 +1,6 @@
-<section>
-                        <h$Depth$>$Title$</h$Depth$>
-                        <div class="$ClassIdentifier$-content">
-                            $Caption$
-                        </div>
-                    </section>
+$Indent$    <section>
+$Indent$                        <h$Depth$>$Title$</h$Depth$>
+$Indent$                        <div class="$ClassIdentifier$-content">
+$Indent$                            $Caption$
+$Indent$                        </div>
+$Indent$                    </section>

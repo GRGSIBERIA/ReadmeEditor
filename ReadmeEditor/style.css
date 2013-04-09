@@ -55,6 +55,27 @@ nav * li
     
 }
 
+/* ‹¤’Ê•”•ª */
+article
+{
+
+}
+
+article > h2
+{
+
+}
+
+article > section
+{
+
+}
+
+article > div
+{
+
+}
+
 /* à–¾ŠÖ˜A */
 
 article#caption
@@ -67,7 +88,7 @@ article#caption > h2
 
 }
 
-article#caption section
+article#caption > section
 {
 
 }
@@ -89,11 +110,6 @@ article#howto > h2
 
 }
 
-article#howto * hr
-{
-
-}
-
 /* Ø‚è‚½•¨ŠÖ˜A */
 
 article#derivate
@@ -106,7 +122,7 @@ article#derivate > h2
 
 }
 
-article#derivate section
+article#derivate > section
 {
 
 }
@@ -126,7 +142,7 @@ article#derivate * div.comment
 
 }
 
-article#derivate * hr
+article#derivate > hr
 {
 
 }
@@ -143,7 +159,7 @@ article#remark > h2
 
 }
 
-article#remark section
+article#remark > section
 {
 
 }
@@ -158,7 +174,7 @@ article#remark * div
 
 }
 
-article#remark * hr
+article#remark > hr
 {
 
 }
@@ -175,7 +191,7 @@ article#license > h2
 
 }
 
-article#license section
+article#license > section
 {
 
 }
@@ -190,7 +206,7 @@ article#license * div
 
 }
 
-article#license * hr
+article#license > hr
 {
 
 }
@@ -203,11 +219,6 @@ article#update
 }
 
 article#update > h2
-{
-
-}
-
-article#update * hr
 {
 
 }
@@ -269,7 +280,7 @@ div.subsubsection-content
     
 }
 
-div.subsubsection-content > hr
+div.subsubsection > hr
 {
 
 }

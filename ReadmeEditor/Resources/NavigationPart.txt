@@ -1,5 +1,5 @@
             <!-- ‚à‚­‚¶ -->
-            <nav>
+            <nav id="$ClassIdentifier$">
                 <h2>$IndexTitle$</h2>
                 <ol>
                     <li><a href="#caption">$CaptionTitle$</a></li>

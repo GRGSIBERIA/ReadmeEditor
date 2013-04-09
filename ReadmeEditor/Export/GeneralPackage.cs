@@ -5,14 +5,17 @@ using System.Text;
 
 namespace ReadmeEditor.Export
 {
-	/// <summary>
-	/// HTMLの出力用
-	/// </summary>
-	public class HTML
+	public class GeneralPackage
 	{
-		public static void test()
-		{
-			
-		}
+	}
+
+	public class GeneralBase
+	{
+
+	}
+
+	public class Titles : GeneralBase
+	{
+		
 	}
 }

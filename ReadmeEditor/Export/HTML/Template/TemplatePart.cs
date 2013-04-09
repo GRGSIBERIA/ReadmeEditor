@@ -14,7 +14,26 @@ namespace ReadmeEditor.Export.HTML.Template
 		public static string RenderPart(PartPackage partPack, PackageBase[] itemPacks)
 		{
 			partPack["Contents"] = RenderingItems(partPack, itemPacks);
-			return TemplateBase.Render(partPack, partPack["PartTemplate"]);
+			return DepthForIndent(partPack) + TemplateBase.Render(partPack, partPack["PartTemplate"]);
+		}
+
+		// AddIndentとは互換性のない処理なので$Indent$を挿入してもうまくいかないので注意
+		private static string DepthForIndent(PartPackage partPack)
+		{
+			// subsection以降のインデントを整える
+			if (partPack.ContainsKey("Depth"))
+			{
+				int depth = int.Parse(partPack["Depth"]);
+				switch (depth)
+				{
+					case 1:
+						return "                    ";
+
+					case 2:
+						return "                        ";
+				}
+			}
+			return "";
 		}
 
 		private static string RenderingItems(PartPackage partPack, PackageBase[] itemPacks)
@@ -26,7 +45,14 @@ namespace ReadmeEditor.Export.HTML.Template
 				result += RenderItemAsIfRenderSection(itemPacks[0], partPack);
 				for (int i = 1; i < itemPacks.Length; i++)
 				{
-					result += "\n" + Properties.Resources.Separate;
+					string indent = "";
+					if (partPack.ContainsKey("Depth"))
+					{
+						int depth = int.Parse(partPack["Depth"]);
+						indent = AddIndent(depth);
+						indent += "    ";
+					}
+					result += "\n" + indent + Properties.Resources.Separate;
 					result += RenderItemAsIfRenderSection(itemPacks[i], partPack);
 				}
 			}
@@ -51,13 +77,28 @@ namespace ReadmeEditor.Export.HTML.Template
 			return result;
 		}
 
+		protected static string AddIndent(int depth)
+		{
+			switch (depth)
+			{
+				case 1:
+					return "    ";
+
+				case 2:
+					return "        ";
+			}
+			return "";
+		}
+
 		private static string RenderItemAsIfSectionPack(PackageBase itemPack, PartPackage partPack)
 		{
 			SectionPackage section = itemPack as SectionPackage;
 			if (section != null)
 			{
 				// sectionのHタグのために設定
-				itemPack["Depth"] = (int.Parse(partPack["Depth"]) + 3).ToString();
+				int depth = int.Parse(partPack["Depth"]);
+				itemPack["Depth"] = (depth + 3).ToString();
+				itemPack["Indent"] = AddIndent(depth);
 			}
 
 			return TemplateBase.Render(itemPack, partPack["ItemTemplate"]) + "\n";
@@ -122,6 +163,7 @@ namespace ReadmeEditor.Export.HTML.Template
 			pack["PartTemplate"] = Properties.Resources.SectionPart;
 			pack["ItemTemplate"] = Properties.Resources.SectionItem;
 			pack["Depth"] = depth.ToString();
+			pack["Indent"] = AddIndent(depth);
 			return StandardPart.RenderPart(pack, items);
 		}
 
@@ -151,6 +193,9 @@ namespace ReadmeEditor.Export.HTML.Template
 	/// </summary>
 	public class NavigationPart : TemplatePart
 	{
-
+		public static string RenderTest(PartPackage partPackage)
+		{
+			return Render(partPackage, Properties.Resources.NavigationPart);
+		}
 	}
 }

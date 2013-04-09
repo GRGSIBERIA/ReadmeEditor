@@ -51,4 +51,9 @@ namespace ReadmeEditor.Export.HTML
 			this.childs = new List<SectionPackage>(childs);
 		}
 	}
+
+	public class ComponentPackage : PackageBase
+	{
+		public ComponentPackage() : base("") { }
+	}
 }

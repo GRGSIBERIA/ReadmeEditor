@@ -1,3 +1,4 @@
 <div class="$ClassIdentifier$">
-                    $Contents$
-                </div>
+                $Contents$
+                $Indent$</div>
+                $Indent$<!-- End $ClassIdentifier$ -->

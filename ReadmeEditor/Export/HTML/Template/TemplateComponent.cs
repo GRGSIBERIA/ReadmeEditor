@@ -15,7 +15,7 @@ namespace ReadmeEditor.Export.HTML.Template
 
 	public class Header : TemplateComponent
 	{
-		public static string TestRender(ItemPackage package)
+		public static string TestRender(ComponentPackage package)
 		{
 			return Render(package, Properties.Resources.Header);
 		}
@@ -23,7 +23,7 @@ namespace ReadmeEditor.Export.HTML.Template
 
 	public class Main : TemplateComponent
 	{
-		public static string TestRender(ItemPackage package)
+		public static string TestRender(ComponentPackage package)
 		{
 			return Render(package, Properties.Resources.Main);
 		}
@@ -31,7 +31,7 @@ namespace ReadmeEditor.Export.HTML.Template
 
 	public class Footer : TemplateComponent
 	{
-		public static string TestRender(ItemPackage package)
+		public static string TestRender(ComponentPackage package)
 		{
 			return Render(package, Properties.Resources.Footer);
 		}

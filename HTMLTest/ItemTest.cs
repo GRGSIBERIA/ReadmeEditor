@@ -80,7 +80,7 @@ namespace HTMLTest
 		}
 
 		[TestMethod]
-		public void ItemMeta1()
+		public void MetaHeadTest()
 		{
 			ItemPackage pack = new ItemPackage("");
 			pack["GenVersion"] = "1.0";
@@ -88,18 +88,6 @@ namespace HTMLTest
 			pack["Title"] = "HogehogeTitle";
 			pack["Tags"] = "タグ,A,B";
 			Console.WriteLine(MetaHead.TestRender(pack));
-		}
-	}
-
-	[TestClass]
-	public class ComponentTest
-	{
-		[TestMethod]
-		public void ComponentHeader1()
-		{
-			ItemPackage pack = new ItemPackage("header");
-			pack["Title"] = "HogehogeTitle";
-			Console.WriteLine(Header.TestRender(pack));
 		}
 	}
 
@@ -193,6 +181,39 @@ namespace HTMLTest
 			return pack;
 		}
 
+		private SectionPackage[] MakeMultiSection(string sectionName)
+		{
+			SectionPackage[] babies1_1 = new SectionPackage[] {
+				MakeSection("section", "A", "男", new SectionPackage[] {}),
+				MakeSection("section", "B", "山", new SectionPackage[] {}),
+				MakeSection("section", "C", "皮", new SectionPackage[] {})
+			};
+
+			SectionPackage[] babies2_1 = new SectionPackage[] {
+				MakeSection("section", "D", "ひげ", new SectionPackage[] {})
+			};
+
+			SectionPackage[] childs1 = new SectionPackage[] {
+				MakeSection("section", "a", "hoge", babies1_1),
+				MakeSection("section", "b", "puyo", new SectionPackage[] {}),
+				MakeSection("section", "c", "moe", new SectionPackage[] {})
+			};
+
+			SectionPackage[] childs2 = new SectionPackage[] {
+				MakeSection("section", "d", "age", babies2_1),
+				MakeSection("section", "e", "dofu", new SectionPackage[] {}),
+				MakeSection("section", "f", "mobu", new SectionPackage[] {})
+			};
+
+			SectionPackage[] sections = new SectionPackage[] {
+				MakeSection("section", "1", "あ", childs1),
+				MakeSection("section", "2", "い", childs2),
+				MakeSection("section", "3", "う", new SectionPackage[] {})
+			};
+
+			return sections;
+		}
+
 		[TestMethod]
 		public void PartSectionHowto1()
 		{
@@ -210,27 +231,55 @@ namespace HTMLTest
 		[TestMethod]
 		public void PartSectionHowto2()
 		{
-			SectionPackage[] babies = new SectionPackage[] {
-				MakeSection("section", "A", "男", new SectionPackage[] {}),
-				MakeSection("section", "B", "山", new SectionPackage[] {}),
-				MakeSection("section", "C", "皮", new SectionPackage[] {})
-			};
-
-			SectionPackage[] childs = new SectionPackage[] {
-				MakeSection("section", "a", "hoge", babies),
-				MakeSection("section", "b", "puyo", new SectionPackage[] {}),
-				MakeSection("section", "c", "moe", new SectionPackage[] {})
-			};
-
-			SectionPackage[] sections = new SectionPackage[] {
-				MakeSection("section", "1", "あ", childs),
-				MakeSection("section", "2", "い", new SectionPackage[] {}),
-				MakeSection("section", "3", "う", new SectionPackage[] {})
-			};
+			SectionPackage[] sections = MakeMultiSection("section");
 
 			PartPackage part = MakePart("howto", "はうつー");
 			string result = StandardPart.RenderSection(part, sections);
 			Console.WriteLine(result);
+		}
+
+		[TestMethod]
+		public void NavigationPartTest()
+		{
+			PartPackage part = new PartPackage("head-navigation");
+			part["IndexTitle"] = "もくじタイトル";
+			part["CaptionTitle"] = "きゃぷしょん";
+			part["HowtoTitle"] = "はうつー";
+			part["RemarkTitle"] = "びこう";
+			part["UpdateTitle"] = "うpだて";
+			part["LicenseTitle"] = "らいせんす";
+			part["DerivateTitle"] = "かりもの";
+			Console.WriteLine(NavigationPart.RenderTest(part));
+		}
+	}
+
+	[TestClass]
+	public class TestComponent
+	{
+		[TestMethod]
+		public void TestHeader()
+		{
+			ComponentPackage pack = new ComponentPackage();
+			pack["Title"] = "たいとる";
+			Console.WriteLine(Header.TestRender(pack));
+		}
+
+		[TestMethod]
+		public void TestFooter()
+		{
+			ComponentPackage pack = new ComponentPackage();
+			pack["Year"] = "2013";
+			pack["Author"] = "GRGSIBERIA";
+			pack["GenVersion"] = "1.0";
+			Console.WriteLine(Footer.TestRender(pack));
+		}
+
+		[TestMethod]
+		public void TestMain()
+		{
+			ComponentPackage pack = new ComponentPackage();
+			pack["MainContent"] = "本番";
+			Console.WriteLine(Main.TestRender(pack));
 		}
 	}
 }
