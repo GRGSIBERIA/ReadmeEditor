@@ -26,12 +26,4 @@ namespace ReadmeEditor.Export.HTML.Template
 			return render_str;
 		}
 	}
-
-	public class MetaHead : TemplateBase
-	{
-		public static string TestRender(ItemPackage package)
-		{
-			return Render(package, Properties.Resources.MetaHead);
-		}
-	}
 }

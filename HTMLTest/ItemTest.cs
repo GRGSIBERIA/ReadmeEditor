@@ -10,7 +10,7 @@ using ReadmeEditor.Export.HTML.Template;
 namespace HTMLTest
 {
 	[TestClass]
-	public class ItemTest
+	public class ItemTest : TestBase
 	{
 		[TestMethod]
 		public void ItemDerivate1()
@@ -78,17 +78,6 @@ namespace HTMLTest
 			pack["Contents"] = "ほげほげだよぉ";
 			Console.WriteLine(Caption.TestRender(pack));
 		}
-
-		[TestMethod]
-		public void MetaHeadTest()
-		{
-			ItemPackage pack = new ItemPackage("");
-			pack["GenVersion"] = "1.0";
-			pack["Author"] = "Eiichi Takebuchi(GRGSIBERIA)";
-			pack["Title"] = "HogehogeTitle";
-			pack["Tags"] = "タグ,A,B";
-			Console.WriteLine(MetaHead.TestRender(pack));
-		}
 	}
 
 	public class TestBase
@@ -107,13 +96,34 @@ namespace HTMLTest
 			partPack["ChapterTitle"] = chapTitle;
 			return partPack;
 		}
+
+		protected PartPackage MakeNavigation()
+		{
+			PartPackage part = new PartPackage("head-navigation");
+			part["IndexTitle"] = "もくじタイトル";
+			part["CaptionTitle"] = "きゃぷしょん";
+			part["HowtoTitle"] = "はうつー";
+			part["RemarkTitle"] = "びこう";
+			part["UpdateTitle"] = "うpだて";
+			part["LicenseTitle"] = "らいせんす";
+			part["DerivateTitle"] = "かりもの";
+			return part;
+		}
+
+		protected ComponentPackage MakeHead()
+		{
+			var pack = new ComponentPackage();
+			pack["GenVersion"] = "1.0";
+			pack["Author"] = "Eiichi Takebuchi(GRGSIBERIA)";
+			pack["Title"] = "HogehogeTitle";
+			pack["Tags"] = "タグ,A,B";
+			return pack;
+		}
 	}
 
 	[TestClass]
 	public class PartTest : TestBase
 	{
-		
-
 		[TestMethod]
 		public void PartCaption()
 		{
@@ -241,20 +251,13 @@ namespace HTMLTest
 		[TestMethod]
 		public void NavigationPartTest()
 		{
-			PartPackage part = new PartPackage("head-navigation");
-			part["IndexTitle"] = "もくじタイトル";
-			part["CaptionTitle"] = "きゃぷしょん";
-			part["HowtoTitle"] = "はうつー";
-			part["RemarkTitle"] = "びこう";
-			part["UpdateTitle"] = "うpだて";
-			part["LicenseTitle"] = "らいせんす";
-			part["DerivateTitle"] = "かりもの";
+			var part = MakeNavigation();
 			Console.WriteLine(NavigationPart.RenderTest(part));
 		}
 	}
 
 	[TestClass]
-	public class TestComponent
+	public class TestComponent : TestBase
 	{
 		[TestMethod]
 		public void TestHeader()
@@ -281,5 +284,33 @@ namespace HTMLTest
 			pack["MainContent"] = "本番";
 			Console.WriteLine(Main.TestRender(pack));
 		}
+
+		[TestMethod]
+		public void TestBody()
+		{
+			ComponentPackage pack = new ComponentPackage();
+			var nav = MakeNavigation();
+			pack["Contents"] = NavigationPart.RenderTest(nav);
+			Console.WriteLine(Body.TestRender(pack));
+		}
+
+		[TestMethod]
+		public void TestHead()
+		{
+			Console.WriteLine(Head.TestRender(MakeHead()));
+		}
+
+		[TestMethod]
+		public void TestHTML()
+		{
+			ComponentPackage body = new ComponentPackage();
+			var nav = MakeNavigation();
+			body["Contents"] = NavigationPart.RenderTest(nav);
+			ComponentPackage html = new ComponentPackage();
+			html["Body"] = Body.TestRender(body);
+			html["Head"] = Head.TestRender(MakeHead());
+			Console.WriteLine(HTML.TestRender(html));
+		}
+
 	}
 }

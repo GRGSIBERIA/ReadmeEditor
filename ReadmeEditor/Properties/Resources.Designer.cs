@@ -61,6 +61,17 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
+        ///       &lt;body&gt;
+        ///$Contents$
+        ///    &lt;/body&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Body {
+            get {
+                return ResourceManager.GetString("Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   &lt;section&gt;
         ///                    &lt;div&gt;
         ///                        $Contents$
@@ -89,7 +100,7 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///   &lt;footer&gt;
+        ///           &lt;footer&gt;
         ///            &lt;div id=&quot;copyright&quot;&gt;
         ///                Copyright $Year$ $Author$ All Rights Reserved.&lt;br /&gt;
         ///            &lt;/div&gt;
@@ -105,7 +116,23 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///   &lt;header&gt;
+        ///       &lt;head&gt;
+        ///        &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        ///        &lt;meta name=&quot;author&quot; content=&quot;$Author$&quot; /&gt;
+        ///        &lt;meta http-equiv=&quot;generator&quot; content=&quot;ReadmeEditor V$GenVersion$&quot; /&gt;
+        ///        &lt;meta name=&quot;keywords&quot; content=&quot;$Tags$&quot; /&gt;
+        ///        &lt;link rel=&quot;Stylesheet&quot; href=&quot;./style.css&quot; /&gt;
+        ///        &lt;title&gt;$Title$&lt;/title&gt;
+        ///    &lt;/head&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Head {
+            get {
+                return ResourceManager.GetString("Head", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///           &lt;header&gt;
         ///            &lt;h1&gt;$Title$&lt;/h1&gt;
         ///        &lt;/header&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -116,8 +143,21 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///   &lt;div id=&quot;main&quot;&gt;
-        ///            $MainContent$
+        ///   &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///$Head$
+        ///$Body$
+        ///&lt;/html&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Html {
+            get {
+                return ResourceManager.GetString("Html", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///           &lt;div id=&quot;main&quot;&gt;
+        ///$MainContent$
         ///        &lt;/div&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Main {
@@ -127,22 +167,8 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///           &lt;meta charset=&quot;UTF-8&quot; /&gt;
-        ///        &lt;meta name=&quot;author&quot; content=&quot;$Author$&quot; /&gt;
-        ///        &lt;meta http-equiv=&quot;generator&quot; content=&quot;ReadmeEditor V$GenVersion$&quot; /&gt;
-        ///        &lt;meta name=&quot;keywords&quot; content=&quot;$Tags$&quot; /&gt;
-        ///        &lt;link rel=&quot;Stylesheet&quot; href=&quot;./style.css&quot; /&gt;
-        ///        &lt;title&gt;$Title$&lt;/title&gt; に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MetaHead {
-            get {
-                return ResourceManager.GetString("MetaHead", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///               &lt;!-- もくじ --&gt;
-        ///            &lt;nav&gt;
+        ///            &lt;nav id=&quot;$ClassIdentifier$&quot;&gt;
         ///                &lt;h2&gt;$IndexTitle$&lt;/h2&gt;
         ///                &lt;ol&gt;
         ///                    &lt;li&gt;&lt;a href=&quot;#caption&quot;&gt;$CaptionTitle$&lt;/a&gt;&lt;/li&gt;
@@ -150,8 +176,7 @@ namespace ReadmeEditor.Properties {
         ///                    &lt;li&gt;&lt;a href=&quot;#derivate&quot;&gt;$DerivateTitle$&lt;/a&gt;&lt;/li&gt;
         ///                    &lt;li&gt;&lt;a href=&quot;#remark&quot;&gt;$RemarkTitle$&lt;/a&gt;&lt;/li&gt;
         ///                    &lt;li&gt;&lt;a href=&quot;#license&quot;&gt;$LicenseTitle$&lt;/a&gt;&lt;/li&gt;
-        ///                    &lt;li&gt;&lt;a href=&quot;#update&quot;&gt;$UpdateTitle$&lt;/a&gt;&lt;/li&gt;
-        ///     [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///                    &lt;li&gt;&lt;a href=&quot;#update&quot;&gt;$Upda [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string NavigationPart {
             get {
@@ -160,12 +185,12 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///   &lt;section&gt;
-        ///                        &lt;h3&gt;$Title$&lt;/h3&gt;
-        ///                        &lt;div class=&quot;$ClassIdentifier$-content&quot;&gt;
-        ///                            $Caption$
-        ///                        &lt;/div&gt;
-        ///                    &lt;/section&gt; に類似しているローカライズされた文字列を検索します。
+        ///   $Indent$    &lt;section&gt;
+        ///$Indent$                        &lt;h$Depth$&gt;$Title$&lt;/h$Depth$&gt;
+        ///$Indent$                        &lt;div class=&quot;$ClassIdentifier$-content&quot;&gt;
+        ///$Indent$                            $Caption$
+        ///$Indent$                        &lt;/div&gt;
+        ///$Indent$                    &lt;/section&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string SectionItem {
             get {
@@ -175,8 +200,10 @@ namespace ReadmeEditor.Properties {
         
         /// <summary>
         ///   &lt;div class=&quot;$ClassIdentifier$&quot;&gt;
-        ///                    $Contents$
-        ///                &lt;/div&gt; に類似しているローカライズされた文字列を検索します。
+        ///                $Contents$
+        ///                $Indent$&lt;/div&gt;
+        ///                $Indent$&lt;!-- End $ClassIdentifier$ --&gt;
+        /// に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string SectionPart {
             get {
@@ -185,8 +212,7 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///    
-        ///                &lt;hr&gt;
+        ///                   &lt;hr&gt;
         ///
         ///                 に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -220,7 +246,7 @@ namespace ReadmeEditor.Properties {
         }
         
         /// <summary>
-        ///   &lt;article id=&quot;$ClassIdentifier$&quot;&gt;
+        ///               &lt;article id=&quot;$ClassIdentifier$&quot;&gt;
         ///                &lt;h2&gt;$ChapterTitle$&lt;/h2&gt;
         ///
         ///                $Contents$

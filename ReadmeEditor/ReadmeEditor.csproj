@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Export\GeneralPackage.cs" />
     <Compile Include="Export\HTML\TemplateEngine.cs" />
     <Compile Include="Export\HTML\TemplatePackage.cs" />
     <Compile Include="Export\HTML\Template\TemplateBase.cs" />
@@ -114,9 +115,11 @@
     <None Include="Resources\Separate.txt" />
     <None Include="Resources\SectionPart.txt" />
     <None Include="Resources\SingleContents.txt" />
+    <None Include="Resources\Body.txt" />
+    <None Include="Resources\Html.txt" />
     <Content Include="style.css" />
     <Content Include="template.html" />
-    <None Include="Resources\MetaHead.txt" />
+    <None Include="Resources\Head.txt" />
     <None Include="Resources\Caption.txt" />
     <None Include="Resources\DerivateItem.txt" />
     <None Include="Resources\StandardItem.txt" />

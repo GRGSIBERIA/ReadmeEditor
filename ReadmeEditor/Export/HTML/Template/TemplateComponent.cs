@@ -36,4 +36,28 @@ namespace ReadmeEditor.Export.HTML.Template
 			return Render(package, Properties.Resources.Footer);
 		}
 	}
+
+	public class Body : TemplateComponent
+	{
+		public static string TestRender(ComponentPackage package)
+		{
+			return Render(package, Properties.Resources.Body);
+		}
+	}
+
+	public class Head : TemplateComponent
+	{
+		public static string TestRender(ComponentPackage package)
+		{
+			return Render(package, Properties.Resources.Head);
+		}
+	}
+
+	public class HTML : TemplateComponent
+	{
+		public static string TestRender(ComponentPackage package)
+		{
+			return Render(package, Properties.Resources.Html);
+		}
+	}
 }
