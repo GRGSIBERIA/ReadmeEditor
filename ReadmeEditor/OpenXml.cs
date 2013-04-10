@@ -94,6 +94,10 @@ namespace ReadmeEditor
 						case "Email":
 							pack.Email = node.InnerText;
 							break;
+
+						case "Tags":
+							pack.Tags = node.InnerText;
+							break;
 					}
 				}
 			}

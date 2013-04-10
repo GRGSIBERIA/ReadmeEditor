@@ -44,6 +44,10 @@
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.infomationTab = new System.Windows.Forms.TabPage();
+			this.label10 = new System.Windows.Forms.Label();
+			this.tags = new System.Windows.Forms.TextBox();
+			this.mailAddress = new System.Windows.Forms.TextBox();
+			this.label7 = new System.Windows.Forms.Label();
 			this.copyOpenPass = new System.Windows.Forms.Button();
 			this.openPass = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
@@ -110,8 +114,6 @@
 			this.licenseMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-			this.label7 = new System.Windows.Forms.Label();
-			this.mailAddress = new System.Windows.Forms.TextBox();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.infomationTab.SuspendLayout();
@@ -270,6 +272,8 @@
 			// 
 			// infomationTab
 			// 
+			this.infomationTab.Controls.Add(this.label10);
+			this.infomationTab.Controls.Add(this.tags);
 			this.infomationTab.Controls.Add(this.mailAddress);
 			this.infomationTab.Controls.Add(this.label7);
 			this.infomationTab.Controls.Add(this.copyOpenPass);
@@ -293,9 +297,43 @@
 			this.infomationTab.Text = "情報";
 			this.infomationTab.UseVisualStyleBackColor = true;
 			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(12, 158);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(104, 12);
+			this.label10.TabIndex = 16;
+			this.label10.Text = "タグ（スペース区切り）";
+			// 
+			// tags
+			// 
+			this.tags.Location = new System.Drawing.Point(11, 173);
+			this.tags.Name = "tags";
+			this.tags.Size = new System.Drawing.Size(257, 19);
+			this.tags.TabIndex = 15;
+			this.tags.TextChanged += new System.EventHandler(this.textBox_TextChangedAsDisableSave);
+			// 
+			// mailAddress
+			// 
+			this.mailAddress.Location = new System.Drawing.Point(11, 72);
+			this.mailAddress.Name = "mailAddress";
+			this.mailAddress.Size = new System.Drawing.Size(145, 19);
+			this.mailAddress.TabIndex = 14;
+			this.mailAddress.TextChanged += new System.EventHandler(this.textBox_TextChangedAsDisableSave);
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(11, 56);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(69, 12);
+			this.label7.TabIndex = 13;
+			this.label7.Text = "メールアドレス";
+			// 
 			// copyOpenPass
 			// 
-			this.copyOpenPass.Location = new System.Drawing.Point(250, 203);
+			this.copyOpenPass.Location = new System.Drawing.Point(251, 251);
 			this.copyOpenPass.Name = "copyOpenPass";
 			this.copyOpenPass.Size = new System.Drawing.Size(117, 23);
 			this.copyOpenPass.TabIndex = 12;
@@ -306,7 +344,7 @@
 			// openPass
 			// 
 			this.openPass.Enabled = false;
-			this.openPass.Location = new System.Drawing.Point(168, 177);
+			this.openPass.Location = new System.Drawing.Point(169, 225);
 			this.openPass.Name = "openPass";
 			this.openPass.Size = new System.Drawing.Size(198, 19);
 			this.openPass.TabIndex = 11;
@@ -315,7 +353,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(166, 162);
+			this.label6.Location = new System.Drawing.Point(167, 210);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(113, 12);
 			this.label6.TabIndex = 10;
@@ -323,7 +361,7 @@
 			// 
 			// secretPass
 			// 
-			this.secretPass.Location = new System.Drawing.Point(11, 177);
+			this.secretPass.Location = new System.Drawing.Point(11, 225);
 			this.secretPass.Name = "secretPass";
 			this.secretPass.Size = new System.Drawing.Size(149, 19);
 			this.secretPass.TabIndex = 9;
@@ -334,7 +372,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(11, 162);
+			this.label5.Location = new System.Drawing.Point(12, 210);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(99, 12);
 			this.label5.TabIndex = 8;
@@ -342,7 +380,7 @@
 			// 
 			// version
 			// 
-			this.version.Location = new System.Drawing.Point(168, 125);
+			this.version.Location = new System.Drawing.Point(168, 123);
 			this.version.Name = "version";
 			this.version.Size = new System.Drawing.Size(100, 19);
 			this.version.TabIndex = 7;
@@ -351,7 +389,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(166, 109);
+			this.label4.Location = new System.Drawing.Point(166, 107);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(96, 12);
 			this.label4.TabIndex = 6;
@@ -359,7 +397,7 @@
 			// 
 			// developedName
 			// 
-			this.developedName.Location = new System.Drawing.Point(11, 125);
+			this.developedName.Location = new System.Drawing.Point(11, 123);
 			this.developedName.Name = "developedName";
 			this.developedName.Size = new System.Drawing.Size(149, 19);
 			this.developedName.TabIndex = 5;
@@ -368,7 +406,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(11, 109);
+			this.label3.Location = new System.Drawing.Point(11, 107);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(75, 12);
 			this.label3.TabIndex = 4;
@@ -950,23 +988,6 @@
 			this.openFileDialog.FileName = "openFileDialog1";
 			this.openFileDialog.Filter = "XMLファイル(*.xml)|*.xml";
 			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(11, 56);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(69, 12);
-			this.label7.TabIndex = 13;
-			this.label7.Text = "メールアドレス";
-			// 
-			// mailAddress
-			// 
-			this.mailAddress.Location = new System.Drawing.Point(11, 72);
-			this.mailAddress.Name = "mailAddress";
-			this.mailAddress.Size = new System.Drawing.Size(145, 19);
-			this.mailAddress.TabIndex = 14;
-			this.mailAddress.TextChanged += new System.EventHandler(this.textBox_TextChangedAsDisableSave);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1106,6 +1127,8 @@
 		private System.Windows.Forms.ToolStripMenuItem 下へ移動ToolStripMenuItem3;
 		private System.Windows.Forms.TextBox mailAddress;
 		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.TextBox tags;
 	}
 }
 

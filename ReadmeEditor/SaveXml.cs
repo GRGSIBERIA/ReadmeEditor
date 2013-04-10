@@ -42,6 +42,7 @@ namespace ReadmeEditor
 				WriteElement(w, "Title", pack.Title);
 				WriteElement(w, "CreatedAt", pack.CreatedAt);
 				WriteElement(w, "Version", pack.Version);
+				WriteElement(w, "Tags", pack.Tags);
 				WriteElement(w, "OpenPass", pack.OpenPass);
 			}
 			w.WriteEndElement();

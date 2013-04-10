@@ -19,6 +19,7 @@ namespace ReadmeEditor
 		public string CreatedAt { get; set; }
 		public string Version { get; set; }
 		public string Email { get; set; }
+		public string Tags { get; set; }
 		
 		public TextPackage[] Update { get; set; }
 		public TextPackage[] Howto { get; set; }

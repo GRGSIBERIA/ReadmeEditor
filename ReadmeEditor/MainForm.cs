@@ -95,6 +95,7 @@ namespace ReadmeEditor
 			pack.Email = mailAddress.Text;
 			pack.Caption = captionTextBox.Text;
 			pack.Version = version.Text;
+			pack.Tags = tags.Text;
 			pack.Update = updateCaption.ToArray();
 			pack.Howto = howtoCaption.ToArray();
 			pack.Derivate = derivateCaption.ToArray();
@@ -530,7 +531,7 @@ namespace ReadmeEditor
 		}
 
 		//////////////////////////////////
-		// 情報関連
+		// テキストボックスに変更が出た場合，自動的にDisableFlagを立てる
 		//////////////////////////////////
 
 		private void textBox_TextChangedAsDisableSave(object sender, EventArgs e)
