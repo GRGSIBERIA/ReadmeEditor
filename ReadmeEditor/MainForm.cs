@@ -64,6 +64,7 @@ namespace ReadmeEditor
 			author.Clear();
 			developedName.Clear();
 			version.Clear();
+			tags.Clear();
 			createdAt.Text = DateTime.Now.ToString();
 			captionTextBox.Clear();
 			howtoListBox.Items.Clear();
@@ -489,6 +490,7 @@ namespace ReadmeEditor
 		{
 			// AttributePackageの中身をフォームへ流し込む
 			author.Text = pack.Author;
+			tags.Text = pack.Tags;
 			developedName.Text = pack.Title;
 			createdAt.Text = pack.CreatedAt;
 			captionTextBox.Text = pack.Caption;
